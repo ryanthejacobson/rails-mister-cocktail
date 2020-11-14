@@ -1,10 +1,25 @@
-<div class="container text-center">
-  <%= link_to "Create Cocktail", new_cocktail_path, class:"btn btn-primary" %>
+<div class="banner text-light" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="container">
+    <h1 class="">Here are your cocktails!</h1>
+    <button class="btn btn-success btn-lg" >
+      <%= link_to 'Add cocktail', new_cocktail_path %>
+    </button>
+  </div>
 </div>
-  <h1>Here are your cocktails</h1>
-<ul>
-  <%@cocktails.each do |cocktail|  %>
-    <li><%= link_to cocktail.name, cocktail  %></li>
-  <% end %>
-</ul>
-<li><%= link_to 'Add cocktail', new_cocktail_path  %></li>
+
+<div class="container m-4">
+  <H1>List of cocktails</H1>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2> <%= cocktail.name %></h2>
+            <p>Enjoy!</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
